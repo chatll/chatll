@@ -25,10 +25,11 @@ RUN apt-get install -y libzmq3-dev
 #build chatll source
 RUN ./autogen.sh
 RUN ./configure
+RUN make clean
 RUN make
 RUN make install
 
 #open service port
-EXPOSE 9666 19666
+EXPOSE 9776 19776
 
 CMD ["chatlld", "--printtoconsole"]
